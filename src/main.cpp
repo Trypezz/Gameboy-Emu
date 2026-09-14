@@ -1,3 +1,4 @@
+#include "CPU/cpu.hpp"
 #include <iostream>
 
 #define SDL_MAIN_HANDLED
@@ -27,6 +28,10 @@ int SDLCALL gameboy_emu_runapp_callback(int argc, char *argv[]) {
   if (cart_load(argv[1])) {
     cart_print_info();
   }
+
+  cpu_reset();
+  cpu_fetch();
+  cpu_execute();
 
   SDL_Quit();
   return 0;

@@ -38,6 +38,8 @@ target_include_directories(Gameboy-Emu PRIVATE
 target_sources(Gameboy-Emu PRIVATE
     src/main.cpp
     src/Cartridge/cart.cpp
+    src/CPU/cpu.cpp
+    src/CPU/cpu_instructions.cpp
 )
 
 # =============================================================================
