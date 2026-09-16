@@ -32,12 +32,20 @@ target_include_directories(Gameboy-Emu PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/includes
 )
 
+target_compile_definitions(Gameboy-Emu PRIVATE
+    "DEFAULT_ROM_PATH=\"${CMAKE_SOURCE_DIR}/resources/Tetris.gb\""
+)
+
 # =============================================================================
 # Source Files
 # =============================================================================
 target_sources(Gameboy-Emu PRIVATE
     src/main.cpp
     src/Cartridge/cart.cpp
+    src/CPU/cpu.cpp
+    src/CPU/cpu_instructions.cpp
+    src/emulator_core.cpp
+    src/MemoryBus/memory_bus.cpp
 )
 
 # =============================================================================
