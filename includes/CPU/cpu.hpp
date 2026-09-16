@@ -27,46 +27,40 @@
 #define GET_ZERO_CARRY ((cpu_registers.f & ~(1UL << 4)) << 4)
 
 struct gb_cpu_registers {
-  struct {
-    union {
-      uint8_t f; // flags
-      uint8_t a; // accumulator
-    };
+
+  union {
     uint16_t af;
+    struct {
+      uint8_t f; // (High half) flags
+      uint8_t a; // (Low half) accumulator
+    };
   };
 
-  struct {
-    union {
+  union {
+    uint16_t bc;
+    struct {
       uint8_t c;
       uint8_t b;
     };
-    uint16_t bc;
   };
 
-  struct {
-    union {
+  union {
+    uint16_t de;
+    struct {
       uint8_t e;
       uint8_t d;
     };
-    uint16_t de;
   };
 
-  struct {
-    union {
+  union {
+    uint16_t hl;
+    struct {
       uint8_t l;
       uint8_t h;
     };
-    uint16_t hl;
   };
 
-  struct {
-    union {
-      uint8_t p;
-      uint8_t s;
-    };
-    uint16_t sp; // Stack pointer
-  };
-
+  uint16_t sp; // Stack pointer
   uint16_t pc; // Program counter (holds the adress of the next instruction)
 };
 

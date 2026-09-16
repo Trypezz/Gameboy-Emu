@@ -22,7 +22,6 @@ void cpu_reset() {
 }
 
 void cpu_fetch() {
-  // TODO: Read from memory bus instead directly from ROM data
   cpu_current_op_code = memory_bus_read(cpu_registers.pc++);
   const gb_cpu_instruction &instruction = instructions[cpu_current_op_code];
   cpu_current_instruction_execute = instruction.execute;
