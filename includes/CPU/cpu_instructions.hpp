@@ -1,11 +1,12 @@
 #pragma once
 
+#include "CPU/cpu.hpp"
 #include <stdint.h>
 
 struct gb_cpu_instruction {
   const char *disassembly;
   uint8_t operand_length;
-  void *execute;
+  cpu_execute_op execute;
 };
 
 extern const gb_cpu_instruction instructions[256];

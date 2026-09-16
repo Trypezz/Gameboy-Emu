@@ -44,6 +44,8 @@ target_sources(Gameboy-Emu PRIVATE
     src/Cartridge/cart.cpp
     src/CPU/cpu.cpp
     src/CPU/cpu_instructions.cpp
+    src/emulator_core.cpp
+    src/MemoryBus/memory_bus.cpp
 )
 
 # =============================================================================
