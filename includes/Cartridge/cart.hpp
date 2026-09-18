@@ -1,7 +1,6 @@
 #pragma once
 
 #include <cstdint>
-#include <stdint.h>
 
 const int MAX_CART_SIZE = 1024 * 1024;
 extern uint8_t cartridge_data[MAX_CART_SIZE];

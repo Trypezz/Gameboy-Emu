@@ -1,6 +1,5 @@
 #pragma once
 #include <cstdint>
-#include <stdint.h>
 
 //
 // Flags:
@@ -16,23 +15,23 @@
 
 #define SET_FLAG_SUBTRACT(value)                                               \
   cpu_registers.f = (cpu_registers.f & ~(1UL << 6)) | ((value) << 6)
-#define GET_ZERO_SUBTRACT ((cpu_registers.f & ~(1UL << 6)) << 6)
+#define GET_FLAG_SUBTRACT ((cpu_registers.f & ~(1UL << 6)) << 6)
 
 #define SET_FLAG_HALF_CARRY(value)                                             \
   cpu_registers.f = (cpu_registers.f & ~(1UL << 5)) | ((value) << 5)
-#define GET_ZERO_HALF_CARRY ((cpu_registers.f & ~(1UL << 5)) << 5)
+#define GET_FLAG_HALF_CARRY ((cpu_registers.f & ~(1UL << 5)) << 5)
 
 #define SET_FLAG_CARRY(value)                                                  \
   cpu_registers.f = (cpu_registers.f & ~(1UL << 4)) | ((value) << 4)
-#define GET_ZERO_CARRY ((cpu_registers.f & ~(1UL << 4)) << 4)
+#define GET_FLAG_CARRY ((cpu_registers.f & ~(1UL << 4)) << 4)
 
 struct gb_cpu_registers {
 
   union {
     uint16_t af;
     struct {
-      uint8_t f; // (High half) flags
-      uint8_t a; // (Low half) accumulator
+      uint8_t f; // (Low half) flags
+      uint8_t a; // (High half) accumulator
     };
   };
 

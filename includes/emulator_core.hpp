@@ -1,7 +1,6 @@
 #pragma once
 
 #include <cstdint>
-#include <stdint.h>
 
 extern uint32_t core_clock_counter;
 

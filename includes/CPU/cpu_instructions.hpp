@@ -1,7 +1,6 @@
 #pragma once
 
 #include "CPU/cpu.hpp"
-#include <stdint.h>
 
 struct gb_cpu_instruction {
   const char *disassembly;
