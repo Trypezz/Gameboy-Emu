@@ -1,5 +1,7 @@
 # Gameboy-Emu
 
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=Trypezz.Gameboy-Emu&"  />
+
 A Game Boy (DMG) emulator in C++23. This is a learning project, not a
 finished emulator.
 
