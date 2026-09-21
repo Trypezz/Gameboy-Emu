@@ -1,6 +1,6 @@
+#include "emulator_core.hpp"
 #include "CPU/cpu.hpp"
 #include "Cartridge/cart.hpp"
-#include "emualtor_core.hpp"
 
 uint32_t core_clock_counter;
 bool core_quit_request = false;

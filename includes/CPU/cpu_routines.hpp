@@ -28,7 +28,7 @@
 #define cpu_routine_ld_ptr_16(reg8, reg16)                                     \
   {                                                                            \
     core_advance_cpu_clocks(4);                                                \
-    reg8 = memory_bus_write(reg16);                                            \
+    reg8 = memory_bus_read(reg16);                                             \
     core_advance_cpu_clocks(4);                                                \
   }
 
@@ -64,13 +64,13 @@
     core_advance_cpu_clocks(4);                                                \
   }
 
-#define cpu_routine_add_hl_16(reg16)                                           \
+#define cpu_routine_add_to_hl_16(reg16)                                        \
   {                                                                            \
     SET_FLAG_SUBTRACT(0);                                                      \
     uint32_t temp = cpu_registers.hl + reg16;                                  \
     SET_FLAG_CARRY(temp > 0xFFFF);                                             \
-    bool hc = ((cpu_registers.hl & 0x0FFF) + (reg16 & 0x0FFF)) > 0x0FFF;       \
-    SET_FLAG_HALF_CARRY(hc);                                                   \
+    SET_FLAG_HALF_CARRY(((cpu_registers.hl & 0x0FFF) + (reg16 & 0x0FFF)) >     \
+                        0x0FFF);                                               \
     core_advance_cpu_clocks(4);                                                \
     cpu_registers.hl = temp & 0xFFFF;                                          \
     core_advance_cpu_clocks(4);                                                \

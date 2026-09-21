@@ -3,7 +3,7 @@
 #include <SDL3/SDL_init.h>
 #include <SDL3/SDL_main.h>
 
-#include "emualtor_core.hpp"
+#include "emulator_core.hpp"
 
 int SDLCALL gameboy_emu_runapp_callback(int argc, char *argv[]);
 

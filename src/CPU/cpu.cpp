@@ -2,7 +2,7 @@
 #include "CPU/cpu_instructions.hpp"
 #include "CPU/cpu_routines.hpp"
 #include "MemoryBus/memory_bus.hpp"
-#include "emualtor_core.hpp"
+#include "emulator_core.hpp"
 #include <cstdint>
 #include <cstdio>
 
@@ -200,11 +200,11 @@ void cpu_add_l_to_a() { cpu_routine_add_to_a_8(cpu_registers.l); }
  */
 
 // LD HL, n16
-void cpu_ld_hl_n16() { cpu_routine_ld_16(cpu_registers.h, cpu_registers.l) }
+void cpu_ld_hl_n16() { cpu_routine_ld_16(cpu_registers.h, cpu_registers.l); }
 // LD BC, n16
 void cpu_ld_bc_n16() { cpu_routine_ld_16(cpu_registers.b, cpu_registers.c); }
 // LD BC, n16
-void cpu_ld_de_n16() { cpu_routine_ld_16(cpu_registers.d, cpu_registers.e) }
+void cpu_ld_de_n16() { cpu_routine_ld_16(cpu_registers.d, cpu_registers.e); }
 // LD SP, n16
 void cpu_ld_sp_n16() { cpu_routine_ld_16(cpu_registers.s, cpu_registers.p); }
 
@@ -239,8 +239,8 @@ void cpu_dec_sp() { cpu_routine_dec_16(cpu_registers.sp); }
  */
 
 // ADD HL, BC
-void cpu_add_bc_to_hl() { cpu_routine_add_hl_16(cpu_registers.bc); }
+void cpu_add_bc_to_hl() { cpu_routine_add_to_hl_16(cpu_registers.bc); }
 // ADD HL, DE
-void cpu_add_de_to_hl() { cpu_routine_add_hl_16(cpu_registers.de); }
+void cpu_add_de_to_hl() { cpu_routine_add_to_hl_16(cpu_registers.de); }
 // ADD HL, SP
-void cpu_add_sp_to_hl() { cpu_routine_add_hl_16(cpu_registers.sp); }
+void cpu_add_sp_to_hl() { cpu_routine_add_to_hl_16(cpu_registers.sp); }
